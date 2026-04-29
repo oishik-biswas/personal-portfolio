@@ -1,19 +1,13 @@
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
-import Studies from '@/components/Studies';
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-200 font-sans">
-      <Navbar />
-      <main className="max-w-4xl mx-auto px-6 pb-24 space-y-32">
-        <Hero />
-        <Experience />
-        <Projects />
-        <Studies />
-      </main>
-    </div>
+    <main className="mx-auto max-w-4xl space-y-20 px-4 pb-20 sm:space-y-28 sm:px-6 sm:pb-24">
+      <Hero />
+      <Experience />
+      <Projects />
+    </main>
   );
 }
