@@ -20,6 +20,7 @@ export default function Footer() {
   });
 
   const [status, setStatus] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -30,6 +31,7 @@ export default function Footer() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("Sending...");
+    setIsSending(true);
 
     try {
       const res = await fetch("/api/contact", {
@@ -39,15 +41,20 @@ export default function Footer() {
         },
         body: JSON.stringify(form),
       });
+      const data = (await res.json().catch(() => null)) as {
+        message?: string;
+      } | null;
 
       if (res.ok) {
         setStatus("Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus("Failed to send message.");
+        setStatus(data?.message ?? "Failed to send message.");
       }
     } catch {
       setStatus("Something went wrong.");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -135,13 +142,16 @@ export default function Footer() {
 
               <button
                 type="submit"
-                className="w-full rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-cyan-300/20"
+                disabled={isSending}
+                className="w-full rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-cyan-300/20 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
 
               {status && (
-                <p className="text-sm text-gray-400">{status}</p>
+                <p className="text-sm text-gray-400" aria-live="polite">
+                  {status}
+                </p>
               )}
             </form>
           </div>
