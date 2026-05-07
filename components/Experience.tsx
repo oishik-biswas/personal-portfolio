@@ -19,61 +19,79 @@ type StudyEntry = {
 
 const experiences: ExperienceEntry[] = [
   {
-    company: "DBS Bank",
+    company: "Smart India Hackathon (SIH)",
     roles: [
       {
-        title: "Associate",
-        period: "Jul 2025 - Present",
+        title: "Full Stack Developer & Project Manager",
+        period: "Oct 2024",
         bullets: [
-          "Building Java, Spring Boot, and Activiti services for current and savings account servicing business processes; raised JUnit coverage above 80% and led a team knowledge base project.",
+          "Led a team of 4 to design and develop an online OPD booking platform using MERN stack (MongoDB, Express.js, React.js, Node.js), improving appointment scheduling efficiency by 30%.",
+          "Secured a position among the top 50 teams out of 700+ by representing KIIT University.",
+          "Implemented RESTful APIs and streamlined seamless backend data flow.",
+          "Managed project tasks using Agile methodologies, including sprint planning, feature prioritization, and team coordination.",
         ],
-      },
-      {
-        title: "Graduate Associate (SEED Programme)",
-        period: "Jul 2023 - Jun 2025",
-        bullets: [
-          "Built a Python and SQL automation tool to migrate and configure over 1,000 configuration variants of a process-tracking workflow from a vendor platform into an in-house Spring Boot and Activiti application (MariaDB), reducing per-configuration setup from 1-2 hours to under 5 minutes.",
-          "Developed backend services in Java, Spring Boot, and Activiti and collaborated across teams on end-to-end delivery.",
-        ],
+        tag: "Healthcare Tech",
       },
     ],
   },
   {
-    company: "Singapore Institute of Technology",
+    company: "ICDCIT Hackathon",
     roles: [
       {
-        title: "Software Developer (Contract)",
-        period: "Apr 2023 - Jun 2023",
+        title: "Backend Developer & Project Manager",
+        period: "Jan 2025",
         bullets: [
-          "Built NFTVue, a NFT gallery website that allows students to connect their crypto wallets to view and verify their school event-issued NFTs",
-          "Worked on DemoConstruct, a full-stack web application (React + Python) that uses Meshroom to reconstruct 3D models from captured images",
+          "Developed an online work schedule manager for healthcare workers using Node.js, Express.js, and MongoDB.",
+          "Built an AI-powered PDF summarizer and quiz generation system using Python and NLP.",
+          "Collaborated with a team of 5 to automate scheduling and knowledge workflows, reducing manual workload by 20%.",
+          "Achieved a top 10 position among 160 participating teams.",
         ],
-        tag: "NFTVue",
+        tag: "AI + Backend",
       },
     ],
   },
   {
-    company: "DBS Bank",
+    company: "EY Techathon 5.0",
     roles: [
       {
-        title: "Software Developer (Intern)",
-        period: "May 2022 - Dec 2022",
+        title: "Participant",
+        period: "Nov 2024",
         bullets: [
-          "Worked on the backend for the digital exchange and asset custody application using Spring Boot and Java",
-          "Built an admin dashboard web application for a DBS Metaverse event using Spring Security and Angular",
+          "Worked on industry-scale full-stack development challenges using React.js, Node.js, and secure REST APIs.",
+          "Focused on cloud integration, authentication systems, and scalable architecture.",
         ],
+        tag: "Enterprise Innovation",
       },
     ],
   },
   {
-    company: "Activate Interactive Pte Ltd",
+    company: "Providence LEAP Ideathon",
     roles: [
       {
-        title: "Software Developer (Intern)",
-        period: "May 2019 - Aug 2019",
+        title: "Full Stack Developer",
+        period: "Oct 2024",
         bullets: [
-          "Developed RP Connect, the iOS and Android mobile app for Republic Polytechnic using React Native",
+          "Developed real-world prototypes using JavaScript, Node.js, and Express.js.",
+          "Focused on API integrations, backend logic, and innovative product strategy.",
+          "Collaborated within a 3-member team to rapidly prototype scalable solutions.",
         ],
+        tag: "Innovation",
+      },
+    ],
+  },
+  {
+    company: "Personal Projects",
+    roles: [
+      {
+        title: "Independent Full Stack Developer",
+        period: "2023 - Present",
+        bullets: [
+          "Built GitHub Repo Summarizer using Next.js, MERN stack, GitHub APIs, and AI summarization tools.",
+          "Developed Full Stack Chat App with WebSockets, JWT authentication, and scalable messaging infrastructure.",
+          "Currently building Uber Clone, Replit Clone (LiveCollab), AR Indoor Navigation PWA, and custom programming languages like GuitarLang and Mid Valyrian.",
+          "Focused heavily on backend engineering, real-time systems, compiler design, and modern web architecture.",
+        ],
+        tag: "Product Engineering",
       },
     ],
   },
@@ -81,12 +99,19 @@ const experiences: ExperienceEntry[] = [
 
 const studies: StudyEntry[] = [
   {
-    institution: "Singapore Institute of Technology",
-    degree: "Bachelor of Engineering in Software Engineering",
-    period: "2019 - 2023",
+    institution: "Kalinga Institute of Industrial Technology (KIIT)",
+    degree: "Bachelor of Technology in Computer Science Engineering",
+    period: "2023 - 2027 (Expected)",
     description:
-      "Focused on full-stack development, theoretical computer science, and algorithmic logic. Participated in multiple hackathons, including the Adobe Hackathon Round 2.",
-    highlights: ["Full-stack development", "Algorithms", "Hackathons"],
+      "Maintaining an excellent CGPA of 9.19/10 while specializing in full-stack development, backend systems, operating systems, DBMS, compiler design, and scalable software architecture. Qualified GATE during undergraduate studies and actively participated in national-level hackathons and technical competitions.",
+    highlights: [
+      "CGPA: 9.19/10",
+      "GATE Qualified",
+      "MERN Stack",
+      "Backend Development",
+      "Hackathons",
+      "Java & Python",
+    ],
   },
 ];
 

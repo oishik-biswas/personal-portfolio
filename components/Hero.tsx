@@ -1,14 +1,18 @@
 import Link from "next/link";
 
 const highlights = [
+  "DSA",
+  "GATE Qualified",
+  "Core CS",
   "Java",
-  "Spring Boot",
-  "Activiti",
   "Python",
-  "SQL",
-  "Angular",
-  "React",
+  "MERN Stack",
   "Next.js",
+  "Backend Systems",
+  "System Design",
+  "DBMS",
+  "Operating Systems",
+  "Problem Solving",
 ];
 
 export default function Hero() {
@@ -28,8 +32,8 @@ export default function Hero() {
       </h1>
 
       <h2 className="mb-8 flex max-w-4xl flex-wrap items-center justify-center gap-2 text-3xl font-bold leading-tight sm:gap-3 sm:text-5xl md:text-6xl">
-        <span className="text-white">Backend & full-stack</span>
-        <span className="text-gray-500">engineer based in</span>
+        <span className="text-white">Software Engineer</span>
+        <span className="text-gray-500">based in</span>
         <span className="text-white">India</span>
       </h2>
 
