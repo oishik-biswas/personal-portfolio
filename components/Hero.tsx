@@ -37,10 +37,21 @@ export default function Hero() {
         <span className="text-white">India</span>
       </h2>
 
-      <p className="mb-8 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
-        I build Java, Spring Boot, and Activiti services for banking workflows,
-        with hands-on experience in Python and SQL automation, Angular
-        dashboards, and React/Next.js product interfaces.
+      <p className="mb-8 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
+        Strong in{" "}
+        <span className="font-semibold text-white transition-all duration-300 hover:text-cyan-200">
+          Data Structures & Algorithms
+        </span>
+        , qualified{" "}
+        <span className="font-semibold text-white transition-all duration-300 hover:text-cyan-200">
+          GATE on my first attempt
+        </span>
+        , and deeply grounded in{" "}
+        <span className="font-semibold text-white transition-all duration-300 hover:text-cyan-200">
+          operating systems, DBMS, OOP, and system design
+        </span>
+        . I combine solid theoretical understanding with hands-on experience building
+        real-world full-stack and backend systems.
       </p>
 
       <div className="mb-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
