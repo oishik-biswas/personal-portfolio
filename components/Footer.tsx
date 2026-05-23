@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { ExternalLink, Link as LinkIcon, Mail, MapPin } from "lucide-react";
+import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 
 const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#projects", label: "Projects" },
   { href: "https://github.com/oishik-biswas", label: "GitHub" },
   { href: "https://www.linkedin.com/in/biswas-oishik/", label: "LinkedIn" },
   { href: "https://leetcode.com/u/_Oishik_/", label: "LeetCode" },
+  { href: "https://linktr.ee/oishikbiswas", label: "Linktree" },
 ];
 
 export default function Footer() {
@@ -18,17 +18,16 @@ export default function Footer() {
     email: "",
     message: "",
   });
-
   const [status, setStatus] = useState("");
   const [isSending, setIsSending] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("Sending...");
     setIsSending(true);
@@ -46,56 +45,62 @@ export default function Footer() {
       } | null;
 
       if (res.ok) {
-        setStatus("Message sent successfully!");
+        setStatus("Message sent.");
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus(data?.message ?? "Failed to send message.");
+        setStatus(data?.message ?? "Message failed.");
       }
     } catch {
-      setStatus("Something went wrong.");
+      setStatus("Message failed.");
     } finally {
       setIsSending(false);
     }
   };
 
   return (
-    <footer
-      id="contact"
-      className="mt-24 border-t border-white/10 bg-[#0f1115]"
-    >
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2">
-          {/* Left Section */}
+    <footer id="contact" className="site-footer mt-8">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">
-              Contact
+            <p className="eyebrow">Contact</p>
+            <h2 className="section-title mt-3">Let&apos;s build something sharp.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-muted">
+              Open to full-stack work, backend-heavy products, developer tools,
+              and interesting language or systems experiments.
             </p>
 
-            <h2 className="mt-3 text-2xl font-bold text-white sm:text-3xl">
-              Let&apos;s build impactful software.
-            </h2>
-
-            <p className="mt-4 max-w-xl text-sm leading-7 text-gray-400">
-              Full-stack developer, backend engineer, GATE-qualified problem
-              solver, and software builder with expertise in scalable systems,
-              DSA, core CS, and modern product engineering.
-            </p>
-
-            <div className="mt-5 space-y-2 text-sm text-gray-400">
-              <p>Email: biswasoishik5@gmail.com</p>
-              <p>Location: India</p>
+            <div className="mt-6 grid gap-3 text-sm text-muted">
+              <p className="inline-flex items-center gap-2">
+                <Mail size={16} />
+                <span>biswasoishik5@gmail.com</span>
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <MapPin size={16} />
+                <span>India</span>
+              </p>
+              <Link
+                href="https://linktr.ee/oishikbiswas"
+                target="_blank"
+                rel="noreferrer"
+                className="quiet-link inline-flex items-center gap-2"
+              >
+                <LinkIcon size={16} />
+                Linktree
+                <ExternalLink size={14} />
+              </Link>
             </div>
 
             <nav
-              aria-label="Footer navigation"
-              className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm text-gray-400"
+              aria-label="Footer links"
+              className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm"
             >
               {footerLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  className="transition-colors hover:text-white"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="quiet-link"
                 >
                   {link.label}
                 </Link>
@@ -103,64 +108,51 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Contact Form */}
-          <div className="rounded-2xl border border-white/10 bg-[#0b0d11] p-6">
-            <h3 className="mb-5 text-xl font-semibold text-white">
-              Send me a message
-            </h3>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="section-card">
+            <h3 className="text-xl font-semibold text-strong">Send a note</h3>
+            <div className="mt-5 grid gap-4">
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Your name"
                 required
                 value={form.name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-white/10 bg-[#090a0c] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300"
+                className="form-field"
               />
-
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder="Your email"
                 required
                 value={form.email}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-white/10 bg-[#090a0c] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300"
+                className="form-field"
               />
-
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Your message"
                 required
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-white/10 bg-[#090a0c] px-4 py-3 text-sm text-white outline-none transition focus:border-cyan-300"
+                className="form-field"
               />
-
-              <button
-                type="submit"
-                disabled={isSending}
-                className="w-full rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-cyan-300/20 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {isSending ? "Sending..." : "Send Message"}
+              <button type="submit" disabled={isSending} className="primary-button justify-center">
+                {isSending ? "Sending..." : "Send message"}
               </button>
-
               {status && (
-                <p className="text-sm text-gray-400" aria-live="polite">
+                <p className="text-sm text-muted" aria-live="polite">
                   {status}
                 </p>
               )}
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-10 flex flex-col gap-3 border-t border-gray-800 pt-5 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-subtle pt-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; {new Date().getFullYear()} Oishik Biswas.</span>
-          <span>Built with Next.js • MERN • Passion</span>
+          <span>Built with Next.js, focus, and a few hidden chords.</span>
         </div>
       </div>
     </footer>
