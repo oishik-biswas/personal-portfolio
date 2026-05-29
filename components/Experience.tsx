@@ -155,9 +155,9 @@ const studies: StudyEntry[] = [
       "Bachelor of Technology in Computer Science Engineering",
     period: "2023 - 2027 (Expected)",
     description:
-      "Maintaining an excellent CGPA of 9.19/10 while specializing in full-stack development, backend systems, operating systems, DBMS, compiler design, and scalable software architecture. Qualified GATE during undergraduate studies and actively participated in national-level hackathons and technical competitions.",
+      "Maintaining an excellent CGPA of 9.23/10 while specializing in full-stack development, backend systems, operating systems, DBMS, compiler design, and scalable software architecture. Qualified GATE during undergraduate studies and actively participated in national-level hackathons and technical competitions.",
     highlights: [
-      "CGPA: 9.19/10",
+      "CGPA: 9.23/10",
       "GATE Qualified",
       "MERN Stack",
       "Backend Development",
